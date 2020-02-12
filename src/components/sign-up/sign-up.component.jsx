@@ -23,7 +23,7 @@ class SingUp extends Component {
 
     const { displayName, email, password, confirmPassword } = this.state;
 
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       alert("Las contraseñas no coinciden");
       return;
     }
