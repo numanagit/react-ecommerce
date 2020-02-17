@@ -2,8 +2,13 @@ import React, { Component } from "react";
 
 import FormInput from "../form-input/form-input.component";
 
-import "./sign-in.styles.scss";
-import CustomButton from "../custom-buttom/custom-buttom.component";
+import {
+  SignInContainer,
+  SignInTitle,
+  ButtonsBarContainer
+} from "./sign-in.styles";
+
+import CustomButton from "../custom-button/custom-button.component";
 
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 
@@ -38,8 +43,8 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className='sign-in'>
-        <h2>Ya tengo una cuenta</h2>
+      <SignInContainer>
+        <SignInTitle>Ya tengo una cuenta</SignInTitle>
         <span>Ingresa con tu correo y clave</span>
         <form onSubmit={this.handleSubmit}>
           <FormInput
@@ -58,14 +63,14 @@ class SignIn extends Component {
             label='password'
             required
           />
-          <div className='buttons'>
+          <ButtonsBarContainer>
             <CustomButton type='submit'>Ingresar</CustomButton>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
               Ingresar con Google
             </CustomButton>
-          </div>
+          </ButtonsBarContainer>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }
