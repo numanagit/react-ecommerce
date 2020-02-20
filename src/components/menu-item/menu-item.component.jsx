@@ -8,11 +8,10 @@ import {
   MenuItemContentTitle,
   MenuItemContentSubtitle
 } from "./menu-item.styled";
-import "./menu-item.styles.scss";
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
   <MenuItemContainer
-    size={MenuItemContainer}
+    size={size}
     onClick={() => history.push(`${match.url}${linkUrl}`)}
   >
     <MenuItemImage

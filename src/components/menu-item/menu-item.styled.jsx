@@ -1,18 +1,8 @@
 import styled, { css } from "styled-components";
 
-const MenuItemContainerLarge = css`
-  height: 380px;
-`;
-
-const getMenuItemContainerStyles = props => {
-  if (props.size) {
-    return MenuItemContainerLarge;
-  }
-};
-
 export const MenuItemContainer = styled.div`
   min-width: 30%;
-  height: 240px;
+  height: ${({ size }) => (size ? "380px" : "240px")};
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -20,7 +10,6 @@ export const MenuItemContainer = styled.div`
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
-  ${getMenuItemContainerStyles}
   &:hover {
     cursor: pointer;
 
